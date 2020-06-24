@@ -1,4 +1,4 @@
-##My solution to the below Frontend Mentor challenge
+## My solution to the below Frontend Mentor challenge
 
 **WORK IN PROGRESS - WILL UPDATE WHEN COMPLETED**
 

@@ -1,0 +1,27 @@
+:root{
+  --color-primary-1: hsl(233, 26%, 24%);
+  --color-primary-2: hsl(136, 65%, 51%);
+  --color-priamry-3: hsl(192, 70%, 51%);
+  --color-neutral-1: hsl(233, 8%, 62%);
+  --color-neutral-2: hsl(220, 16%, 96%);
+  --color-neutral-3: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; /*make 1rem = 10px so that calculations are easier */
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 1.8rem; /* 18px; */
+  color: var(--color-neutral-1);
+}
