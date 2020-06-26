@@ -1,10 +1,14 @@
 :root{
   --color-primary-1: hsl(233, 26%, 24%);
   --color-primary-2: hsl(136, 65%, 51%);
-  --color-priamry-3: hsl(192, 70%, 51%);
+  --color-primary-3: hsl(192, 70%, 51%);
   --color-neutral-1: hsl(233, 8%, 62%);
   --color-neutral-2: hsl(220, 16%, 96%);
   --color-neutral-3: hsl(0, 0%, 98%);
+
+  --margin-sm: 1rem;
+  --margin-md: 3rem;
+  --margin-lg: 10rem;
 }
 
 *,
@@ -26,6 +30,90 @@ body {
   color: var(--color-neutral-1);
 }
 
+
+/*** HEADER SECTION ***/
+.header-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem var(--margin-lg);
+}
+
+.menu-dropdown{
+  position: relative;
+}
+
+/*Hide checkbox - this "invisible" checkbox is used to toggle the menu on smaller screens*/
+.menu-checkbox {
+    display: none;
+}
+
+.menu-checkbox:checked ~ .header-nav {
+    display: block;
+}
+
+.menu-checkbox:checked ~ .menu-toggle > .menu-toggle-close {
+    display: block;
+}
+
+.menu-checkbox:checked ~ .menu-toggle > .menu-toggle-open {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    padding: 2rem;
+    text-align: end;
+    background-color: yellow;
+}
+
+.header-nav{
+  display: flex;
+  align-items: center;
+}
+
+.header-nav ul{
+  display: flex;
+  list-style: none;
+  margin-right: auto;
+  width: 65%;
+}
+
+.header-link{
+  color: var(--color-neutral-1);
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 2rem 1.5rem;
+  text-decoration: none;
+}
+
+.header-link:hover{
+  color: var(--color-primary-1);
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
+  border-image-slice: 1;
+  text-decoration: none;
+}
+
+
+/*** RE-USABLE CTA-BTN ***/
+.cta-btn{
+  background-image: linear-gradient(to right, var(--color-primary-2), var(--color-primary-3));
+  border-radius: 30px;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+}
+
+.cta-btn:hover{
+  /* filter:brightness(110%); */
+  opacity: .8;
+}
+
+
+/*** INTRO SECTION ***/
 .intro-section{
   background-color: var(--color-neutral-3);
   display: flex;
@@ -44,19 +132,84 @@ body {
   object-fit: cover;
 }
 
+
+/*** FEATURES SECTION ***/
 .features-section{
   background-color: var(--color-neutral-2);
 }
 
+
+/*** ARTICLES SECTION ***/
 .article-section{
   background-color: var(--color-neutral-3);
 }
 
+
+/*** FOOTER SECTION ***/
 footer{
   background-color: var(--color-primary-1);
 }
 
+
+/*** MEDIA QUERIES ***/
+@media only screen and (max-width: 1200px) {
+  /*** HEADER SECTION ***/
+
+    .header-section{
+      padding: 2rem var(--margin-md);
+    }
+}
 @media only screen and (max-width: 600px) {
+/*** HEADER SECTION ***/
+
+  .header-section{
+    padding: 2rem var(--margin-sm);
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .menu-toggle-close, .cta-btn-nav{
+    display: none;
+  }
+
+  .header-nav{
+    display: none;
+    position: absolute;
+    z-index: 20;
+  }
+}
+@media only screen and (max-width: 800px) {
+/*** HEADER SECTION ***/
+
+  .cta-btn-nav{
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+/*** HEADER SECTION ***/
+
+  .header-section{
+    padding: 2rem var(--margin-sm);
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .menu-toggle-close, .cta-btn-nav{
+    display: none;
+  }
+
+  .header-nav{
+    display: none;
+    position: absolute;
+    z-index: 20;
+  }
+
+
+/*** INTRO SECTION ***/
   .intro-section{
     flex-direction: column;
   }

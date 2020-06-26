@@ -12,20 +12,25 @@
   <title>Frontend Mentor | Easybank landing page</title>
 </head>
 <body>
-  <header>
-    <img src="images/logo.svg" alt="logo">
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-      <a href="#" class="cta-btn">Request Invite</a>
-        <img src="images/icon-close.svg" alt="close icon for dropdown menu">
-        <img src="images/icon-hamburger.svg" alt="hamburger icon for dropdown menu">
-    </nav>
+  <header class="header-section">
+    <img class="header-logo"src="images/logo.svg" alt="logo">
+    <div class="menu-dropdown">
+      <input type="checkbox" id="nav-show-menu" class="menu-checkbox" />
+      <label for="nav-show-menu" class="menu-toggle">
+        <img src="images/icon-close.svg" class="menu-toggle-close" alt="close icon for dropdown menu">
+        <img src="images/icon-hamburger.svg" class="menu-toggle-open" alt="hamburger icon for dropdown menu">
+      </label>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#" class="header-link">Home</a></li>
+          <li><a href="#" class="header-link">About</a></li>
+          <li><a href="#" class="header-link">Contact</a></li>
+          <li><a href="#" class="header-link">Blog</a></li>
+          <li><a href="#" class="header-link">Careers</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="#" class="cta-btn cta-btn-nav">Request Invite</a>
   </header>
   <main>
     <section class="intro-section">
@@ -124,5 +129,9 @@
       Coded by <a href="https://freedamoore.github.io/">Freeda Moore</a>.
     </div>
   </footer>
+
+  <!-- <script type="text/javascript">
+    document.querySelector(".menu-dropdown").addEventListener("click", () => {console.log(event.target); console.log(document.getElementById("nav-show-menu").checked)});
+  </script> -->
 </body>
 </html>
