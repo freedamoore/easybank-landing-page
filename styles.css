@@ -25,3 +25,47 @@ body {
   font-size: 1.8rem; /* 18px; */
   color: var(--color-neutral-1);
 }
+
+.intro-section{
+  background-color: var(--color-neutral-3);
+  display: flex;
+}
+
+.intro-section__image{
+  background-image: url('images/bg-intro-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.intro-section__image img{
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.features-section{
+  background-color: var(--color-neutral-2);
+}
+
+.article-section{
+  background-color: var(--color-neutral-3);
+}
+
+footer{
+  background-color: var(--color-primary-1);
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-section{
+    flex-direction: column;
+  }
+
+  .intro-section__image{
+    background-image: url('images/bg-intro-mobile.svg');
+  }
+
+  .intro-section__text{
+    order: 1;
+  }
+}
