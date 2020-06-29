@@ -6,7 +6,7 @@
   --color-neutral-2: hsl(220, 16%, 96%);
   --color-neutral-3: hsl(0, 0%, 98%);
 
-  --margin-sm: 1rem;
+  --margin-sm: 2rem;
   --margin-md: 3rem;
   --margin-lg: 10rem;
 }
@@ -107,7 +107,6 @@ body {
 }
 
 .cta-btn:hover{
-  /* filter:brightness(110%); */
   opacity: .8;
 }
 
@@ -116,19 +115,44 @@ body {
 .intro-section{
   background-color: var(--color-neutral-3);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-section__text{
+  padding-left: var(--margin-lg);
+  padding-bottom: 8rem;
+  width: 50%;
+}
+
+.intro-section__text h1{
+  color: var(--color-primary-1);
+  font-size: 4.2rem;
+  font-weight: 300;
+}
+
+.intro-section__text p{
+  padding: 2rem 0 3rem 0;
 }
 
 .intro-section__image{
   background-image: url('images/bg-intro-desktop.svg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: left bottom;
+  background-size: 135% 135%;
+  height: 80vh;
+  /* width: 60vw; */
+  width: 50%;
+  overflow: hidden; /*to cut off top of the img used on top of the background image*/
 }
 
 .intro-section__image img{
   display: block;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  height: 110%;
+  width: 110%;
+  object-fit: contain;
+
+  transform: translate(10%, -10%);
 }
 
 
@@ -157,28 +181,12 @@ footer{
     .header-section{
       padding: 2rem var(--margin-md);
     }
+/*** INTRO SECTION ***/
+    .intro-section__text{
+      padding-left: var(--margin-md);
+    }
 }
-@media only screen and (max-width: 600px) {
-/*** HEADER SECTION ***/
 
-  .header-section{
-    padding: 2rem var(--margin-sm);
-  }
-
-  .menu-toggle{
-    display: block;
-  }
-
-  .menu-toggle-close, .cta-btn-nav{
-    display: none;
-  }
-
-  .header-nav{
-    display: none;
-    position: absolute;
-    z-index: 20;
-  }
-}
 @media only screen and (max-width: 800px) {
 /*** HEADER SECTION ***/
 
@@ -186,6 +194,7 @@ footer{
     display: none;
   }
 }
+
 @media only screen and (max-width: 600px) {
 /*** HEADER SECTION ***/
 
@@ -237,6 +246,7 @@ footer{
   .header-link:hover{
     color: var(--color-neutral-1);
   }
+
 /*** INTRO SECTION ***/
   .intro-section{
     flex-direction: column;
@@ -244,9 +254,25 @@ footer{
 
   .intro-section__image{
     background-image: url('images/bg-intro-mobile.svg');
+    height: 60vh;
+    width: 100%;
+    background-position: center bottom;
+    background-size: 100% 100%;
+  }
+
+  .intro-section__image img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+
+    transform: translate(0, -10%);
   }
 
   .intro-section__text{
     order: 1;
+    padding-left: var(--margin-sm);
+    text-align: center;
+    width: 100%;
   }
 }
