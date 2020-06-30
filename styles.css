@@ -28,15 +28,19 @@ body {
   font-family: 'Public Sans', sans-serif;
   font-size: 1.8rem; /* 18px; */
   color: var(--color-neutral-1);
+  overflow-x: hidden; /*this is to hide the overflow of the intro image*/
 }
 
 
 /*** HEADER SECTION ***/
 .header-section{
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem var(--margin-lg);
+  position: relative;
+  z-index: 10; /*so that mobile image is cut off on top*/
 }
 
 .menu-dropdown{
@@ -117,6 +121,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* height: 60vh; */
 }
 
 .intro-section__text{
@@ -138,21 +144,20 @@ body {
 .intro-section__image{
   background-image: url('images/bg-intro-desktop.svg');
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 135% 135%;
-  height: 80vh;
-  /* width: 60vw; */
+  background-position: left 0% bottom 25%;
+  background-size: 150% 150%;
+  height: 65vh;
   width: 50%;
-  overflow: hidden; /*to cut off top of the img used on top of the background image*/
+  /* overflow: hidden; */
+  /* overflow-y: visible; */
 }
 
 .intro-section__image img{
   display: block;
-  height: 110%;
-  width: 110%;
+  height: 140%;
+  width: 140%;
   object-fit: contain;
-
-  transform: translate(10%, -10%);
+  transform: translate(1%, -15%);
 }
 
 
@@ -190,6 +195,57 @@ body {
 /*** ARTICLES SECTION ***/
 .article-section{
   background-color: var(--color-neutral-3);
+  padding: 6rem var(--margin-lg);
+}
+
+.article-section h2{
+  color: var(--color-primary-1);
+  font-size: 3rem;
+  font-weight: 300;
+  padding-bottom: 2rem;
+}
+
+.article-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 20px;
+}
+
+.article-card{
+  background-color: white;
+}
+
+.article-card__img{
+  display: block;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.article-card__text{
+    padding: 3rem;
+    text-align: left;
+}
+
+.article-card__text h5{
+   font-size: 1.2rem;
+   font-weight: 300;
+   padding: 1.5rem 0;
+}
+
+.article-card__text--link{
+  color: var(--color-primary-1);
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.article-card__text--link:hover{
+    color: var(--color-primary-2);
+}
+
+.article-card__text p{
+  margin-top: 1.5rem;
 }
 
 
@@ -214,6 +270,12 @@ footer{
 /*** FEATURES SECTION ***/
 
     .features-section{
+      padding: 6rem var(--margin-md);
+    }
+
+/*** ARTICLE SECTION ***/
+
+    .article-section{
       padding: 6rem var(--margin-md);
     }
 }
@@ -310,6 +372,13 @@ footer{
   /*** FEATURES SECTION ***/
 
   .features-section{
+    padding: 6rem var(--margin-sm);
+    text-align: center;
+  }
+
+  /*** ARTICLE SECTION ***/
+
+  .article-section{
     padding: 6rem var(--margin-sm);
     text-align: center;
   }
