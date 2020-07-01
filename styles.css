@@ -121,8 +121,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* height: 60vh; */
 }
 
 .intro-section__text{
@@ -148,8 +146,6 @@ body {
   background-size: 150% 150%;
   height: 65vh;
   width: 50%;
-  /* overflow: hidden; */
-  /* overflow-y: visible; */
 }
 
 .intro-section__image img{
@@ -191,6 +187,7 @@ body {
   font-weight: 300;
   padding: 2rem 0;
 }
+
 
 /*** ARTICLES SECTION ***/
 .article-section{
@@ -252,6 +249,86 @@ body {
 /*** FOOTER SECTION ***/
 footer{
   background-color: var(--color-primary-1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: start;
+  align-items: center;
+  padding: 2rem var(--margin-lg);
+}
+
+.footer-logo{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.social{
+  grid-column: 1 /2;
+  grid-row: 2 / 3;
+}
+
+.social a:not(:last-child){
+  margin-right: 1rem;
+}
+
+.social img:hover{
+  /* invert(.5) sepia(1) creates hsl 38.5,24.2%,57.1%).
+  We then convert this to the target hsl 136, 65%, 51%
+  The math isn't exact so you have to adjust the values until you get desired color
+  Not ideal, but works.*/
+  filter: invert(.5) sepia(1) saturate(4) hue-rotate(85deg) brightness(106%);
+
+  /*to make something white, use brightness(0) invert(1)*/
+}
+
+.footer-nav{
+  display: flex;
+  grid-column: 2 / span 2;
+  grid-row: 1 /span 2;
+}
+
+.footer-nav ul{
+  list-style: none;
+}
+
+.footer-nav ul:not(:last-child){
+  margin-right: 12rem;
+}
+
+.footer-nav li:not(:last-child){
+  margin-bottom: 2rem;
+}
+
+.footer-nav a{
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-nav a:hover{
+  color: var(--color-primary-2);
+}
+
+.footer-cta-btn{
+  justify-self: end;
+}
+
+.footer-copyright{
+  font-size: 1.4rem;
+  grid-column: 4 /5;
+  grid-row: 2 /3;
+  justify-self: end;
+}
+.attribution{
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.attribution a{
+  color: var(--color-primary-2);
+  text-decoration: none;
 }
 
 
@@ -278,13 +355,40 @@ footer{
     .article-section{
       padding: 6rem var(--margin-md);
     }
+
+    /*** FOOTER SECTION ***/
+    footer{
+      padding: 2rem var(--margin-md);
+    }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
 /*** HEADER SECTION ***/
 
   .cta-btn-nav{
     display: none;
+  }
+
+  /*** FOOTER SECTION ***/
+  footer{
+    padding: 2rem var(--margin-sm);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-nav{
+    grid-column: 2 / -1;
+    justify-self: center;
+  }
+
+  .footer-cta-btn{
+    justify-self: center;
+    margin: 2rem;
+  }
+
+  .footer-copyright{
+    grid-column: 1 /2;
+    grid-row: 3 /4;
+    justify-self: start;
   }
 }
 
@@ -358,7 +462,6 @@ footer{
     height: 100%;
     width: 100%;
     object-fit: contain;
-
     transform: translate(0, -10%);
   }
 
@@ -382,4 +485,41 @@ footer{
     padding: 6rem var(--margin-sm);
     text-align: center;
   }
+
+
+  /*** FOOTER SECTION ***/
+  footer{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, minmax(50px, min-content));
+    justify-items: center;
+  }
+
+  .social{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .footer-nav{
+    flex-direction: column;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: center;
+  }
+
+  .footer-nav ul:not(:last-child){
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .footer-copyright{
+    font-size: 1.4rem;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    justify-self: center;
+  }
+
+  .attribution{
+    font-size: 1.4rem;
+  }
+
 }
