@@ -1,9 +1,14 @@
 ## My solution to the below Frontend Mentor challenge
 
 For my solution I have used semantic HTML and CSS3.
+
 The layout was done utilising CSS Grids and Flexbox and responsiveness achieved using these in combination with media queries.
+
 I used variables for the colours and main layout margins.
-Challenges included the navigation that turns into a hamburger dropdown menu on mobile and the cropped layouts of the intro background image and overlay mockup image.
+
+Challenges included the navigation that turns into a hamburger dropdown menu on mobile and the positioning of the cropped layouts of the intro background image and overlay mockup image.
+
+See my solution [here](https://freedamoore.github.io/easybank-landing-page/)
 
 ---
 
