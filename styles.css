@@ -327,8 +327,12 @@ footer{
 }
 
 .attribution a{
-  color: var(--color-primary-2);
+  color: white;
   text-decoration: none;
+}
+
+.attribution a:hover{
+  color: var(--color-primary-2);
 }
 
 
